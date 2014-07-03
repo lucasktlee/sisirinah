@@ -1,6 +1,6 @@
 # Sisirinah 
 
-This is the custom [Ghost](http://ghost.org/) theme for [lucasktlee.com][http://lucasktlee.com/]. 
+This is the custom [Ghost](http://ghost.org/) theme for [lucasktlee.com](http://lucasktlee.com/). 
 
 
 ## Copyright, license, and usage 
