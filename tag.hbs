@@ -1,0 +1,16 @@
+{{!< default}}
+<header class="tag-archive-header">
+	<h1>{{tag.name}}</h1>
+</header>
+{{#foreach posts}}
+	<article class="{{post_class}}" id="post-{{id}}">
+		<header class="post-header">
+			<h2><a href="{{url}}">{{{title}}}</a></h2>
+			<p><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMM DD, YYYY"}}</time></p>
+		</header>
+		<section class="post-excerpt">
+			<p>{{excerpt words="50"}}&#8230;</p>
+		</section>
+	</article>
+{{/foreach}}
+{{pagination}}

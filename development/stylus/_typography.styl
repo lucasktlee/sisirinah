@@ -1,0 +1,417 @@
+/*  BODY AND HTML
+    ----------------------------------------    */
+html 
+    font-size: 62.5%    // sets font size to 10px
+
+body 
+    background: base-bg-c
+    color: base-tx-c
+    font-family: base-tx-fm
+    font-size: base-s-tx-fs
+    font-style: normal
+    font-weight: 400
+    hyphenate(auto)
+    line-height: base-s-lh
+    padding: 0
+    optimize-legibility()
+    font-smoothing()
+    word-wrap: break-word
+
+/* Zero out margins and padding */
+article,
+aside,
+blockquote,
+div,
+dl,
+footer,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hr,
+ol,
+p,
+pre,
+section,
+ul
+    margin: 0
+    padding: 0 
+
+/* Remove hyphenation for certain HTML elements */
+abbr,
+blockquote,
+code,
+kbd,
+pre,
+q,
+samp,
+var
+    hyphenate(none)
+
+
+/*  BLOCKQUOTES AND QUOTES
+    ----------------------------------------    */
+blockquote 
+    border-left: base-at-c solid base-s-bd-t-w
+    color: base-mt-c
+    font-style: italic
+    margin-bottom: base-s-lh
+    padding: 0 base-s-hs
+    cite, em, i 
+        font-style: normal
+    footer 
+        text-align: right
+        cite 
+            font-style: normal
+            &:before 
+                content: "\2014"
+                padding-right: (base-s-hs/3)
+            span.author 
+            span.character
+            span.speaker
+                font-style: italic
+
+q:after
+q:before 
+    content: none 
+
+/* US English */
+html[lang="en"]
+html[lang="en-US"]
+    q:before
+        content: "\201C"
+    q:after 
+        content: "\201D" 
+    q
+        > q:before
+            content: "\2018"
+        > q:after
+            content: "\2019"
+
+/* UK English */        
+html[lang="en-GB"]
+    q:before
+        content: "\2018"
+    q:after 
+        content: "\2019"
+    q
+        > q:before
+            content: "\201C"
+        > q:after 
+            content: "\201D"
+
+
+/*  CODE AND PREFORMATTED TEXT 
+    ----------------------------------------    */
+code
+    font-family: base-ms-fm
+pre
+    border-bottom: base-bd-c solid base-s-bd-n-w
+    border-left: base-at-c solid base-s-bd-t-w
+    border-right: base-bd-c solid base-s-bd-n-w
+    border-top: base-bd-c solid base-s-bd-n-w
+    direction: ltr
+    line-height: 1
+    margin-bottom: base-s-lh
+    overflow: auto
+    padding: base-s-lh base-s-hs
+    tab-size: 4
+    white-space: pre
+    word-spacing: normal
+    word-wrap: normal
+
+
+/*  FIGURES, IMAGES, AND PICTURES  
+    ----------------------------------------    */
+figure
+.picture 
+    a > img 
+        border-width: 0
+    a 
+        border-bottom-width: 0
+    figcaption 
+    p.caption
+        color: base-mt-c
+        font-size: base-s-sm-fs
+        text-align: left
+        span 
+            text-transform: uppercase
+        a 
+            border-bottom-width: base-s-bd-n-w
+
+
+/*  HEADINGS
+    ----------------------------------------    */
+h1
+h2
+h3
+h4
+h5
+h6
+    color: base-hd-c
+    font-family: base-hd-fm
+    font-style: normal
+    font-weight: 700
+h1
+    font-size: base-s-h1-fs
+    line-height: base-s-h1-lh
+    padding: base-s-h1-pd 0
+h2
+    font-size: base-s-h2-fs
+    line-height: base-s-h2-lh
+    padding: base-s-h2-pd 0
+h3 
+    font-size: base-s-h3-fs
+    line-height: base-s-h3-lh
+    padding: base-s-h3-pd 0
+h4 
+    font-size: base-s-h4-fs
+    line-height: base-s-h4-lh
+    padding: 0 
+h5 
+    font-size: base-s-h5-fs
+    line-height: base-s-h5-lh 
+    padding: 0
+h6 
+    font-size: base-s-h6-fs
+    line-height: base-s-h6-lh
+    padding: 0 
+
+
+
+/*  HORIZONTAL RULES 
+    ----------------------------------------    */
+hr 
+    border-color: base-bd-c
+    border-style: solid
+    border-width: base-s-bd-n-w 0 0 0
+    margin: base-s-lh 0
+    &.w-50
+    &.w-75 
+        margin: base-s-lh auto
+    &.w-50
+        width: 50% 
+    &.w-75
+        width: 75%
+
+
+/*  INLINE STYLES
+    ----------------------------------------    */
+abbr 
+    letter-spacing: 0.1rem
+    text-transform: uppercase
+cite
+    font-style: italic
+del 
+    color: base-mt-c
+ins 
+    color: base-hd-c
+small 
+    font-size: base-s-sm-fs
+sub
+sup
+    font-size: base-s-tn-fs
+    position: relative
+    vertical-align: baseline
+sub
+    top: 0.8ex
+sup
+    bottom: 1.0ex
+    
+
+/*  LINKS
+    ----------------------------------------    */
+a 
+    border-bottom-style: solid
+    border-bottom-width: base-s-bd-n-w
+    text-decoration: none
+    &:link
+    &:visited
+        border-bottom-color: base-a-ln-c
+        color: base-a-ln-c
+    &:active
+    &:hover 
+        border-bottom-color: base-a-ac-c
+        color: base-a-ac-c
+
+
+/*  LISTS
+    ----------------------------------------    */
+dl
+ol
+ul
+    margin-bottom: base-s-lh
+
+ol
+ul
+    margin-left: base-s-hs
+    &>li>ol
+    &>li>ul
+        margin-left: base-s-hs
+        &>li>ol
+        &>li>ul
+            margin-left: base-s-hs
+
+/* definition lists */
+dl
+    dt
+        font-weight: bold 
+    dd 
+        margin-left: base-s-hs
+
+/* ordered lists */
+ol
+    list-style: decimal
+    > li > ol 
+        list-style: lower-alpha
+        > li > ol
+            list-style: lower-roman
+
+/* unordered lists */
+ul 
+    list-style: disc
+    > li > ul 
+        list-style: circle
+        > li > ul 
+            list-style: square 
+
+
+/*  PARAGRAPHS
+    ----------------------------------------    */
+p 
+    margin-bottom: base-s-lh
+    &.lede
+        color: base-hd-c
+        font-size: base-s-h4-fs
+    
+
+/*  MISCELLANEOUS TYPOGRAPHIC STYLES
+    ----------------------------------------    */
+/* text alignment */
+.center
+    text-align: center
+.left
+    text-align: left
+.right
+    text-align: right
+
+/* font styles */
+.italic 
+    font-style: italic
+
+
+/*  PAGE HEADER (#page-header)
+    ----------------------------------------    */
+#page-header 
+    h1 
+        text-align: center
+        text-shadow: 0.1rem 0.1rem 0 base-bd-c
+        text-transform: uppercase
+    a 
+        @extends $hd-a
+
+
+/*  PAGE CONTENT (#page-content)
+    ----------------------------------------    */
+#page-content 
+    .index-header   
+    .tag-archive-header
+        border-top: base-bd-c solid base-s-bd-n-w
+        h1
+            hd-muted(base-s-sm-fs, base-s-lh)
+    .pagination 
+        nav.pages
+            color: base-mt-c
+            font-size: base-s-sm-fs
+            text-align: center
+            a.newer-posts
+            a.older-posts 
+                border-bottom-width: 0
+                display: inline-block
+            a.newer-posts
+                margin-left: base-s-hs * 2
+            a.older-posts
+                margin-right: base-s-hs * 2
+    .post-footer 
+        h2 
+            hd-muted(base-s-sm-fs, base-s-lh)
+            padding-bottom: 0
+        .post-metadata
+            h3 
+                font-size: base-s-h4-fs
+                padding: 0
+                a 
+                    @extends $hd-a
+            p 
+                color: base-mt-c
+        .post-tags 
+            h2 + ul 
+                margin-top: base-s-lh
+            ul 
+                list-style: none
+                margin-left: 0
+                li 
+                    display: inline-block
+                    line-height: base-s-tx-fs
+                    margin-bottom: (base-s-lh * 2/3)
+                    a 
+                        border-bottom-width: 0
+                        border-radius: (base-s-hs/6)
+                        display: block
+                        padding: (base-s-hs/3)
+                        &:link
+                        &:visited
+                            background: base-a-ln-c 
+                            color: base-bg-c
+                        &:active 
+                        &:hover 
+                            background: base-a-ac-c
+                            color: base-bg-c        
+    .post-header
+        a 
+            @extends $hd-a
+        h1 
+            padding: 0 0 base-s-lh
+        h2 
+            padding: base-s-lh 0 0
+        time 
+            color: base-lt-c
+            font-family: base-hd-fm
+            font-weight: normal
+        &:hover 
+            time 
+                color: base-mt-c
+
+
+/*  PAGE FOOTER (#page-footer)
+    ----------------------------------------    */
+#page-footer 
+    .rights
+        a 
+            &:link
+            &:visited 
+                border-bottom-color: base-mt-c
+                color: base-mt-c
+            &:active
+            &:hover
+                border-bottom-color: base-a-ac-c
+                color: base-a-ac-c
+        p 
+            color: base-mt-c
+
+
+/*  SITE NAVIGATION (#site-navigation)
+    ----------------------------------------    */
+#site-navigation 
+    ul 
+        list-style: none
+        margin: 0
+        text-align: center
+        li 
+            display: inline-block
+            margin: 0 (base-s-hs/2)
+            a 
+                border-bottom-width: 0

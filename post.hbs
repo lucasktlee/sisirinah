@@ -1,0 +1,32 @@
+{{!< default}}
+<article class="{{post_class}}" id="post-{{id}}">
+	{{#post}}
+	<header class="post-header">
+		<h1 class="post-title">{{{title}}}</h1>
+	</header>
+
+	<section class="post-content">
+		{{content}}
+	</section>
+
+	<footer class="post-footer">
+		<section class="post-metadata">
+			<h2>Written by</h2>
+			<h3><a href="{{author.website}}">{{author.name}}</a></h3>
+			<p>Published on <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='MMMM DD, YYYY'}}</time>.</p>
+		</section>
+		<section class="post-tags">
+			<h2>Tagged as</h2>
+			{{#if tags}}
+			<ul>
+				{{#foreach tags}}
+					<li><a href="{{url}}">{{name}}</a></li>
+				{{/foreach}}
+			</ul>
+			{{else}}
+				<p>This post was not tagged.</p>
+			{{/if}}
+		</section>
+	</footer>
+	{{/post}}
+</article>

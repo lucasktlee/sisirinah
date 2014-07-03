@@ -1,0 +1,120 @@
+@media screen and (min-width: bp-medium-min) and (max-width: bp-medium-max)
+    /*  BODY
+        ----------------------------------------    */
+    body 
+        font-size: base-m-tx-fs 
+        line-height: base-m-lh
+
+
+    /*  COMMON MARGINS AND PADDINGS 
+        ----------------------------------------    */
+    blockquote, 
+    dl, 
+    ol, 
+    p,
+    pre, 
+    ul
+        margin-bottom: base-m-lh
+
+    pre 
+        padding-bottom: base-m-lh 
+        padding-top: base-m-lh
+
+
+    /*  HEADINGS
+        ----------------------------------------    */
+    h1 
+        font-size: base-m-h1-fs
+        line-height: base-m-h1-lh
+        padding: base-m-lh 0
+    h2 
+        font-size: base-m-h2-fs 
+        line-height: base-m-h2-lh
+        padding: base-m-lh 0
+    h3 
+        font-size: base-m-h3-fs
+        line-height: base-m-h3-lh
+        padding: base-m-lh 0
+    h4 
+        font-size: base-m-h4-fs 
+        line-height: base-m-h4-lh
+        padding: base-m-lh 0 0
+    h5 
+        font-size: base-m-h5-fs 
+        line-height: base-m-h5-lh 
+        padding: 0
+    h6 
+        font-size: base-m-h6-fs 
+        line-height: base-m-h6-lh 
+        padding: 0
+
+
+    /*  HORIZONTAL RULES 
+        ----------------------------------------    */
+    hr 
+        margin-bottom: base-m-lh 
+        margin-top: base-m-lh
+
+
+    /*  INLINE STYLES
+    ----------------------------------------    */
+    small 
+        font-size: base-m-sm-fs
+    sub
+    sup 
+        font-size: base-m-tn-fs
+
+
+    /*  LISTS
+        ----------------------------------------    */
+    ol
+    ul
+        margin-left: base-m-hs
+        &>li>ol
+        &>li>ul
+            margin-left: base-m-hs
+            &>li>ol
+            &>li>ul
+                margin-left: base-m-hs
+
+    /*  PARAGRAPHS 
+        ----------------------------------------    */
+    p 
+        &.lede
+            font-size: base-m-h4-fs
+            
+
+    /*  PAGE CONTENT (#page-content)
+        ----------------------------------------    */
+    #page-content 
+        .index-header
+        .tag-archive-header 
+            h1 
+                hd-muted(base-m-tn-fs, base-m-lh) 
+        .pagination 
+            padding: base-m-lh 0
+            nav.pages 
+                font-size: base-m-tn-fs
+                a.newer-posts 
+                    margin-left: base-m-hs * 4
+                a.older-posts
+                    margin-right: base-m-hs * 4
+        .post-footer 
+            h2 
+                hd-muted(base-m-tn-fs, base-m-lh)
+                padding-bottom: 0
+            .post-metadata
+                h3 
+                    font-size: base-m-h4-fs
+            .post-tags 
+                h2 + ul 
+                    margin-top: base-m-lh
+                ul 
+                    li 
+                        line-height: base-m-tx-fs
+                        margin-bottom: (base-m-lh * 3/5)
+        .post-header 
+            h1 
+                padding-bottom: base-m-lh 
+            h2 
+                padding-top: base-m-lh 
