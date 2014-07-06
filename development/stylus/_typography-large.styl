@@ -13,12 +13,14 @@
     ol, 
     p,
     pre, 
+    table,
     ul
         margin-bottom: base-l-lh
 
     pre 
         padding-bottom: base-l-lh 
         padding-top: base-l-lh
+
 
     /*  BLOCKQUOTES AND QUOTES
         ----------------------------------------    */
@@ -82,6 +84,32 @@
             &>li>ul
                 margin-left: base-l-hs
 
+
+
+    /*  PARAGRAPHS 
+        ----------------------------------------    */
+    p 
+        &.lede
+            font-size: base-l-h4-fs
+
+
+    /*  TABLE 
+        ----------------------------------------    */
+    table 
+        thead tr,
+        tbody tr
+            td,
+            th 
+                padding: (base-l-lh * 1/2) (base-l-hs/3)
+
+    /*  Condensed table  */
+    table.condensed 
+        & > tbody,
+        & > thead 
+            & > tr 
+                & > td,
+                & > th 
+                    padding: (base-l-lh * 1/4 ) (base-l-hs/6)
 
 
     /*  PAGE CONTENT (#page-content)

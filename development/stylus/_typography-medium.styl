@@ -13,6 +13,7 @@
     ol, 
     p,
     pre, 
+    table,
     ul
         margin-bottom: base-m-lh
 
@@ -83,6 +84,26 @@
         &.lede
             font-size: base-m-h4-fs
             
+
+    
+    /*  TABLE 
+        ----------------------------------------    */
+    table 
+        thead tr,
+        tbody tr
+            td,
+            th 
+                padding: (base-m-lh * 3/5) (base-m-hs/3)
+
+    /*  Condensed table  */
+    table.condensed 
+        & > tbody,
+        & > thead 
+            & > tr 
+                & > td,
+                & > th 
+                    padding: (base-m-lh * 2/5 ) (base-m-hs/6)
+
 
     /*  PAGE CONTENT (#page-content)
         ----------------------------------------    */
