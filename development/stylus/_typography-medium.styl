@@ -1,141 +1,152 @@
-@media screen and (min-width: bp-medium-min) and (max-width: bp-medium-max)
+@media all and (min-width: bp-m-min) and (max-width: bp-m-max) 
     /*  BODY
-        ----------------------------------------    */
+        ----------------------------------------    */   
     body 
-        font-size: base-m-tx-fs 
-        line-height: base-m-lh
+        font-size: fs-m-tx
+        line-height: lh-m 
 
 
-    /*  COMMON MARGINS AND PADDINGS 
+    /*  COMMON STYLES 
         ----------------------------------------    */
-    blockquote, 
-    dl, 
+    /* Set common bottom margin for block level elements */
+    blockquote,
+    dl,
     ol, 
     p,
-    pre, 
+    pre,
     table,
-    ul
-        margin-bottom: base-m-lh
+    ul,
+    .footnotes
+        margin-bottom: lh-m
 
+    /* Set common padding and borders for blockquotes and preformatted text */
+    blockquote,
     pre 
-        padding-bottom: base-m-lh 
-        padding-top: base-m-lh
+        border-left: c-at solid (hs * 1/4)
+        padding: 0 hs
+
+    /* Set common styles for metadata-like headings */ 
+    #page-content 
+        .index-header h1,
+        .tag-archive-header h1,
+        .post .post-footer h2  
+            heading-muted(fs-m-sm, lh-m) 
+
+
+    /*  CAPTIONS 
+        ----------------------------------------    */  
+    caption, 
+    figcaption,
+    .caption 
+        font-size: fs-m-sm 
+
+
+    /*  CODE AND PREFORMATTED TEXT 
+        ----------------------------------------    */
+    code 
+        font-size: fs-m-sm 
+    pre 
+        padding-bottom: (lh-m - 0.9rem)
+        padding-top: (lh-m - 0.9rem)
+
+
+    /*  FOOTNOTES 
+        ----------------------------------------    */
+    .footnotes
+        hr.w-50 
+            margin: (lh-m * 2) 0 lh-m 
+        ol 
+            font-size: fs-m-sm 
 
 
     /*  HEADINGS
         ----------------------------------------    */
     h1 
-        font-size: base-m-h1-fs
-        line-height: base-m-h1-lh
-        padding: base-m-lh 0
+        heading(fs-m-h1, lh-m-h1, lh-m, lh-m)
     h2 
-        font-size: base-m-h2-fs 
-        line-height: base-m-h2-lh
-        padding: base-m-lh 0
+        heading(fs-m-h2, lh-m-h2, lh-m, lh-m)
     h3 
-        font-size: base-m-h3-fs
-        line-height: base-m-h3-lh
-        padding: base-m-lh 0
+        heading(fs-m-h3, lh-m, lh-m, lh-m)
     h4 
-        font-size: base-m-h4-fs 
-        line-height: base-m-h4-lh
-        padding: base-m-lh 0 0
-    h5 
-        font-size: base-m-h5-fs 
-        line-height: base-m-h5-lh 
-        padding: 0
+        heading(fs-m-h4, lh-m)
+    h5,
     h6 
-        font-size: base-m-h6-fs 
-        line-height: base-m-h6-lh 
-        padding: 0
+        heading(fs-m-tx, lh-m)
 
 
     /*  HORIZONTAL RULES 
         ----------------------------------------    */
     hr 
-        margin-bottom: base-m-lh 
-        margin-top: base-m-lh
+        margin: lh-m 0
+        &.w-50,
+        &.w-75
+            margin: lh-m auto
 
 
     /*  INLINE STYLES
-    ----------------------------------------    */
-    small 
-        font-size: base-m-sm-fs
-    sub
-    sup 
-        font-size: base-m-tn-fs
-
-
-    /*  LISTS
         ----------------------------------------    */
-    ol
-    ul
-        margin-left: base-m-hs
-        &>li>ol
-        &>li>ul
-            margin-left: base-m-hs
-            &>li>ol
-            &>li>ul
-                margin-left: base-m-hs
+    small 
+        font-size: fs-m-sm 
+    sub,
+    sup 
+        font-size: fs-m-tn 
 
-    /*  PARAGRAPHS 
+
+    /*  PARAGRAPHS
         ----------------------------------------    */
     p 
-        &.lede
-            font-size: base-m-h4-fs
-            
+        &.lede 
+            font-size: fs-m-h4 
 
-    
-    /*  TABLE 
+
+    /*  TABLES
         ----------------------------------------    */
     table 
-        thead tr,
-        tbody tr
-            td,
-            th 
-                padding: (base-m-lh * 3/5) (base-m-hs/3)
-
-    /*  Condensed table  */
+        td,
+        th 
+            padding: (lh-m * 2/5) (hs * 1/2)            
     table.condensed 
-        & > tbody,
-        & > thead 
-            & > tr 
-                & > td,
-                & > th 
-                    padding: (base-m-lh * 2/5 ) (base-m-hs/6)
+        td,
+        th 
+            padding: (lh-m * 1/5) (hs * 1/4)
 
 
     /*  PAGE CONTENT (#page-content)
         ----------------------------------------    */
     #page-content 
-        .index-header
-        .tag-archive-header 
-            h1 
-                hd-muted(base-m-tn-fs, base-m-lh) 
         .pagination 
-            padding: base-m-lh 0
             nav.pages 
-                font-size: base-m-tn-fs
-                a.newer-posts 
-                    margin-left: base-m-hs * 4
-                a.older-posts
-                    margin-right: base-m-hs * 4
-        .post-footer 
-            h2 
-                hd-muted(base-m-tn-fs, base-m-lh)
-                padding-bottom: 0
-            .post-metadata
-                h3 
-                    font-size: base-m-h4-fs
-            .post-tags 
-                h2 + ul 
-                    margin-top: base-m-lh
-                ul 
-                    li 
-                        line-height: base-m-tx-fs
-                        margin-bottom: (base-m-lh * 3/5)
-        .post-header 
-            h1 
-                padding-bottom: base-m-lh 
-            h2 
-                padding-top: base-m-lh 
+                font-size: fs-m-sm 
+                a 
+                    &.newer-posts 
+                        margin-left: (hs * 1.5)
+                    &.older-posts 
+                        margin-right: (hs * 1.5) 
+        .post 
+            .post-footer 
+                .post-tags 
+                    ul 
+                        li 
+                            line-height: fs-m-tx
+                            margin-bottom: (lh-m * 2/5)
+                            a 
+                                padding: (hs * 1/2)
+            .post-header 
+                time 
+                    font-size: fs-m-sm 
+
+
+    /*  PAGE HEADER (#page-header)
+        ----------------------------------------    */
+    #page-header 
+        h1 
+            font-size: fs-m-l
+
+
+    /*  SITE NAVIGATION (#site-navigation)
+        ----------------------------------------    */
+    #site-navigation 
+        ul 
+            li 
+                margin: 0 hs
+

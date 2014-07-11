@@ -1,14 +1,36 @@
-font-smoothing()
-    -webkit-font-smoothing: antialiased
+heading(fs, lh, pdb = 0, pdt = 0) 
+    // fs = font-size, lh = line-height, pdb = padding-bottom, pdt = padding-top
+    font-size: fs 
+    line-height: lh 
+    if pdb == 0 and pdt == 0 
+        padding: 0
+    else 
+        if pdb == pdt 
+            padding: pdt 0
+        else 
+            padding: pdt 0 pdb
 
-hyphenate(val)
-    // valid values: none, manual, auto
+heading-link() 
+    border-bottom-width: 0
+    &:link,
+    &:visited 
+        color: c-hd 
+    &:active,
+    &:hover 
+        color: c-a-hv
+
+heading-muted(fs, lh) 
+    color: c-lt 
+    font-size: fs
+    font-weight: 400 
+    letter-spacing: 0.2rem
+    line-height: lh 
+    padding: lh 0 
+    text-transform: uppercase 
+
+hyphenate(val) 
     hyphens: val
     -moz-hyphens: val
     -ms-hyphens: val
-    -o-hyphens: val
+    -o-hyphens: val 
     -webkit-hyphens: val
-
-optimize-legibility()
-    text-rendering: optimizeLegibility
-

@@ -4,19 +4,20 @@ html
     font-size: 62.5%    // sets font size to 10px
 
 body 
-    background: base-bg-c
-    color: base-tx-c
-    font-family: base-tx-fm
-    font-size: base-s-tx-fs
+    background-color: c-bg
+    color: c-tx
+    font-family: fm-tx
+    font-size: fs-s-tx
     font-style: normal
     font-weight: 400
     hyphenate(auto)
-    line-height: base-s-lh
-    padding: 0
-    optimize-legibility()
-    font-smoothing()
+    line-height: lh-s
+    text-rendering: optimizeLegibility
     word-wrap: break-word
 
+
+/*  COMMON STYLES
+    ----------------------------------------    */
 /* Zero out margins and padding */
 article,
 aside,
@@ -40,6 +41,23 @@ ul
     margin: 0
     padding: 0 
 
+/* Set common bottom margin for block level elements */
+blockquote,
+dl,
+ol, 
+p,
+pre,
+table,
+ul,
+.footnotes
+    margin-bottom: lh-s
+
+/* Set common padding and borders for blockquotes and preformatted text */
+blockquote,
+pre 
+    border-left: c-at solid (hs * 1/6)
+    padding: 0 hs
+
 /* Remove hyphenation for certain HTML elements */
 abbr,
 blockquote,
@@ -51,34 +69,48 @@ samp,
 var
     hyphenate(none)
 
+/* Set common styles for links in headings */
+#page-header h1 a,
+#page-content .post .post-footer .post-metadata h3 a,
+#page-content .post .post-header h1 a,
+#page-content .post .post-header h2 a 
+    heading-link() 
+
+/* Set common styles for metadata-like headings */ 
+#page-content 
+    .index-header h1,
+    .tag-archive-header h1,
+    .post .post-footer h2  
+        heading-muted(fs-s-sm, lh-s) 
+
+/* Set common bottom padding for headings in posts */ 
+#page-content 
+    .post  
+        .post-footer h3,
+        .post-header h1,
+        .post-header h2 
+            padding-bottom: 0
+
 
 /*  BLOCKQUOTES AND QUOTES
     ----------------------------------------    */
-blockquote 
-    border-left: base-at-c solid base-s-bd-t-w
-    color: base-mt-c
-    font-style: italic
-    margin-bottom: base-s-lh
-    padding: 0 base-s-hs
-    cite, em, i 
+blockquote
+    color: c-mt 
+    font-style: italic 
+    cite,
+    em,
+    i 
         font-style: normal
     footer 
-        text-align: right
+        text-align: right 
         cite 
             font-style: normal
             &:before 
                 content: "\2014"
-                padding-right: (base-s-hs/3)
-            span.author 
-            span.character
-            span.speaker
-                font-style: italic
-
-q:after
+                padding-right: (hs * 1/3)
+q:after,
 q:before 
-    content: none 
-
-/* US English */
+    content: none
 html[lang="en"]
 html[lang="en-US"]
     q:before
@@ -91,110 +123,100 @@ html[lang="en-US"]
         > q:after
             content: "\2019"
 
-/* UK English */        
-html[lang="en-GB"]
-    q:before
-        content: "\2018"
-    q:after 
-        content: "\2019"
-    q
-        > q:before
-            content: "\201C"
-        > q:after 
-            content: "\201D"
+
+/*  CAPTIONS 
+    ----------------------------------------    */
+caption, 
+figcaption, 
+.caption 
+    color: c-mt 
+    font-size: fs-s-sm 
+    text-align: left
+    span 
+        text-transform: uppercase
 
 
 /*  CODE AND PREFORMATTED TEXT 
     ----------------------------------------    */
-code
-    font-family: base-ms-fm
-pre
-    border-bottom: base-bd-c solid base-s-bd-n-w
-    border-left: base-at-c solid base-s-bd-t-w
-    border-right: base-bd-c solid base-s-bd-n-w
-    border-top: base-bd-c solid base-s-bd-n-w
-    direction: ltr
+code 
+    font-family: fm-ms
+    font-size: fs-s-sm
+pre 
+    border-bottom: c-bd solid bd-w-n
+    border-right: c-bd solid bd-w-n
+    border-top: c-bd solid bd-w-n
     line-height: 1
-    margin-bottom: base-s-lh
     overflow: auto
-    padding: base-s-lh base-s-hs
+    padding-bottom: (lh-s * 2/3)
+    padding-top: (lh-s * 2/3)
     tab-size: 4
     white-space: pre
     word-spacing: normal
-    word-wrap: normal
+    word-wrap: normal       
 
 
 /*  FIGURES, IMAGES, AND PICTURES  
     ----------------------------------------    */
 figure
 .picture 
-    a > img 
-        border-width: 0
     a 
-        border-bottom-width: 0
-    figcaption 
-    p.caption
-        color: base-mt-c
-        font-size: base-s-sm-fs
-        text-align: left
-        span 
-            text-transform: uppercase
-        a 
-            border-bottom-width: base-s-bd-n-w
+        & > img 
+            border-width: 0
+
+
+/*  FOOTNOTES 
+    ----------------------------------------    */
+.footnotes 
+    hr.w-50 
+        margin: (lh-s * 2) 0 lh-s
+    ol 
+        font-size: fs-s-sm
+        margin-bottom: 0
 
 
 /*  HEADINGS
     ----------------------------------------    */
-h1
-h2
-h3
-h4
-h5
-h6
-    color: base-hd-c
-    font-family: base-hd-fm
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 
+    color: c-hd 
+    font-family: fm-hd
     font-style: normal
     font-weight: 700
-h1
-    font-size: base-s-h1-fs
-    line-height: base-s-h1-lh
-    padding: base-s-h1-pd 0
-h2
-    font-size: base-s-h2-fs
-    line-height: base-s-h2-lh
-    padding: base-s-h2-pd 0
+h1 
+    heading(fs-s-h1, lh-s-h1, lh-s, lh-s)
+h2 
+    heading(fs-s-h2, lh-s-h2, lh-s, lh-s)
 h3 
-    font-size: base-s-h3-fs
-    line-height: base-s-h3-lh
-    padding: base-s-h3-pd 0
+    heading(fs-s-h3, lh-s, lh-s, lh-s)
 h4 
-    font-size: base-s-h4-fs
-    line-height: base-s-h4-lh
-    padding: 0 
-h5 
-    font-size: base-s-h5-fs
-    line-height: base-s-h5-lh 
-    padding: 0
+    heading(fs-s-h4, lh-s)
+h5,
 h6 
-    font-size: base-s-h6-fs
-    line-height: base-s-h6-lh
-    padding: 0 
+    heading(fs-s-tx, lh-s)
 
+/* Adjust top padding for consecutive headings -- h1 - h4 */
+h1 + h2,
+h2 + h3, 
+h3 + h4 
+    padding-top: 0
 
 
 /*  HORIZONTAL RULES 
     ----------------------------------------    */
 hr 
-    border-color: base-bd-c
-    border-style: solid
-    border-width: base-s-bd-n-w 0 0 0
-    margin: base-s-lh 0
-    &.w-50
-    &.w-75 
-        margin: base-s-lh auto
-    &.w-50
-        width: 50% 
+    border: 0
+    border-top: c-bd solid bd-w-n
+    margin: lh-s 0
+    &.w-50,
     &.w-75
+        margin: lh-s auto 
+    &.w-50 
+        width: 50%
+    &.w-75 
         width: 75%
 
 
@@ -203,78 +225,77 @@ hr
 abbr 
     letter-spacing: 0.1rem
     text-transform: uppercase
-cite
+    &[title] 
+        border-bottom: c-bd dotted bd-w-n
+cite 
     font-style: italic
 del 
-    color: base-mt-c
+    color: c-mt
+    text-decoration: line-through
 ins 
-    color: base-hd-c
+    color: c-hd 
+    text-decoration: underline
 small 
-    font-size: base-s-sm-fs
-sub
-sup
-    font-size: base-s-tn-fs
+    font-size: fs-s-sm
+sub,
+sup 
+    font-size: fs-s-tn
     position: relative
     vertical-align: baseline
 sub
     top: 0.8ex
 sup
-    bottom: 1.0ex
-    
+    bottom: 1.0ex 
+
 
 /*  LINKS
     ----------------------------------------    */
 a 
-    border-bottom-style: solid
-    border-bottom-width: base-s-bd-n-w
+    border-bottom: solid bd-w-n
     text-decoration: none
-    &:link
-    &:visited
-        border-bottom-color: base-a-ln-c
-        color: base-a-ln-c
-    &:active
+    &:link,
+    &:visited 
+        border-bottom-color: c-a-ln 
+        color: c-a-ln
+    &:active,
     &:hover 
-        border-bottom-color: base-a-ac-c
-        color: base-a-ac-c
+        border-bottom-color: c-a-hv 
+        color: c-a-hv
 
 
 /*  LISTS
     ----------------------------------------    */
-dl
-ol
-ul
-    margin-bottom: base-s-lh
+/* Common styles for lists */
+ol,
+ul 
+    margin-left: hs 
+    & > li > ol,
+    & > li > ul 
+        margin-left: hs 
+        & > li > ol,
+        & > li > ul 
+            margin-left: hs 
 
-ol
-ul
-    margin-left: base-s-hs
-    &>li>ol
-    &>li>ul
-        margin-left: base-s-hs
-        &>li>ol
-        &>li>ul
-            margin-left: base-s-hs
-
-/* definition lists */
-dl
-    dt
-        font-weight: bold 
+/* Definition lists */
+dl 
+    dt 
+        font-weight: 700
     dd 
-        margin-left: base-s-hs
+        margin-left: hs 
 
-/* ordered lists */
-ol
-    list-style: decimal
+/* Ordered lists */ 
+ol 
+    list-style: decimal 
     > li > ol 
-        list-style: lower-alpha
-        > li > ol
+        list-style: lower-alpha 
+        > li > ol 
             list-style: lower-roman
 
-/* unordered lists */
+/* Unordered lists */
 ul 
-    list-style: disc
+    list-style: disc 
     > li > ul 
-        list-style: circle
+        list-style: circle 
         > li > ul 
             list-style: square 
 
@@ -282,58 +303,44 @@ ul
 /*  PARAGRAPHS
     ----------------------------------------    */
 p 
-    margin-bottom: base-s-lh
-    &.lede
-        color: base-hd-c
-        font-size: base-s-h4-fs
-    
+    &.lede 
+        color: c-hd 
+        font-size: fs-s-h4
+
 
 /*  TABLES
     ----------------------------------------    */
 table 
-    border: base-bd-c solid base-s-bd-n-w
-    margin-bottom: base-s-lh
+    border: c-bd solid bd-w-n
     max-width: 100%
-    width: 100%    
-    & > tbody 
-        & > tr 
-            border-bottom: base-bd-c solid base-s-bd-n-w
-            &:last-child 
-                border-bottom-width: 0
-    & > thead 
-        & > tr 
-            border-bottom: base-bd-c solid base-s-bd-n-w
-            & > th 
-                vertical-align: bottom        
-    & > tbody, 
-    & > thead
-        & > tr    
-            & > td, 
-            & > th 
-                border-right: base-bd-c solid base-s-bd-n-w
-                padding: (base-s-lh * 2/3) (base-s-hs/3)
-                hyphenate(none)
-                min-width: 6em
-                text-align: left
-                &:last-child 
-                    border-right-width: 0
+    width: 100%
+    tr 
+        border-bottom: c-bd solid bd-w-n 
+    td,
+    th 
+        border-right: c-bd solid bd-w-n
+        hyphenate(none)
+        padding: (lh-s * 1/3) (hs * 1/3) 
 
-/*  Striped table  */
 table.striped 
     & > tbody 
-        & > tr:nth-child(odd)
+        tr:nth-child(odd)
             & > td,
             & > th 
-                background: base-tr-c
+                background: c-tr 
 
-/*  Condensed table  */
 table.condensed 
-    & > tbody,
-    & > thead 
-        & > tr 
-            & > td,
-            & > th 
-                padding: (base-s-lh * 1/3 ) (base-s-hs/6)
+    td,
+    th 
+        padding: (lh-s * 1/6) (hs * 1/6)            
+
+.responsive-wrapper 
+    overflow-x: auto
+    overflow-y: hidden
+    width: 100%
+    table 
+        th 
+            white-space: nowrap
 
 
 /*  MISCELLANEOUS TYPOGRAPHIC STYLES
@@ -346,120 +353,90 @@ table.condensed
 .right
     text-align: right
 
-/* font styles */
-.italic 
-    font-style: italic
+
+/*  PAGE CONTENT (#page-content)
+    ----------------------------------------    */
+#page-content 
+    .pagination 
+        nav.pages 
+            color: c-mt 
+            font-size: fs-s-sm 
+            text-align: center 
+            a
+                border-bottom-width: 0
+                display: inline-block
+                &.newer-posts
+                    margin-left: hs 
+                &.older-posts 
+                    margin-right: hs 
+    .post 
+        .post-footer 
+            .post-tags 
+                ul 
+                    list-style: none
+                    margin: 0
+                    li 
+                        display: inline-block
+                        line-height: fs-s-tx
+                        margin-bottom: (lh-s * 1/3)
+                        a 
+                            border-radius: (hs * 1/6)
+                            color: c-bg
+                            display: block
+                            padding: (hs * 1/3)
+                            &:link,
+                            &:visited 
+                                background: c-a-ln  
+                            &:active,
+                            &:hover 
+                                background: c-a-hv 
+        .post-header 
+            time 
+                color: c-lt
+                font-family: fm-hd
+                font-size: fs-s-sm
+                font-weight: 400
+            &:hover
+                time 
+                    color: c-mt  
+
+
+/*  PAGE FOOTER (#page-footer)
+    ----------------------------------------    */
+#page-footer 
+    .rights 
+        a 
+            &:link
+            &:visited 
+                border-bottom-color: c-mt
+                color: c-mt
+            &:active
+            &:hover
+                border-bottom-color: c-a-hv
+                color: c-a-hv
+        p 
+            color: c-mt
 
 
 /*  PAGE HEADER (#page-header)
     ----------------------------------------    */
 #page-header 
     h1 
+        font-size: fs-s-l
         text-align: center
-        text-shadow: 0.1rem 0.1rem 0 base-bd-c
-        text-transform: uppercase
-    a 
-        @extends $hd-a
-
-
-/*  PAGE CONTENT (#page-content)
-    ----------------------------------------    */
-#page-content 
-    .index-header   
-    .tag-archive-header
-        border-top: base-bd-c solid base-s-bd-n-w
-        h1
-            hd-muted(base-s-sm-fs, base-s-lh)
-    .pagination 
-        nav.pages
-            color: base-mt-c
-            font-size: base-s-sm-fs
-            text-align: center
-            a.newer-posts
-            a.older-posts 
-                border-bottom-width: 0
-                display: inline-block
-            a.newer-posts
-                margin-left: base-s-hs * 2
-            a.older-posts
-                margin-right: base-s-hs * 2
-    .post-footer 
-        h2 
-            hd-muted(base-s-sm-fs, base-s-lh)
-            padding-bottom: 0
-        .post-metadata
-            h3 
-                font-size: base-s-h4-fs
-                padding: 0
-                a 
-                    @extends $hd-a
-            p 
-                color: base-mt-c
-        .post-tags 
-            h2 + ul 
-                margin-top: base-s-lh
-            ul 
-                list-style: none
-                margin-left: 0
-                li 
-                    display: inline-block
-                    line-height: base-s-tx-fs
-                    margin-bottom: (base-s-lh * 2/3)
-                    a 
-                        border-bottom-width: 0
-                        border-radius: (base-s-hs/6)
-                        display: block
-                        padding: (base-s-hs/3)
-                        &:link
-                        &:visited
-                            background: base-a-ln-c 
-                            color: base-bg-c
-                        &:active 
-                        &:hover 
-                            background: base-a-ac-c
-                            color: base-bg-c        
-    .post-header
-        a 
-            @extends $hd-a
-        h1 
-            padding: 0 0 base-s-lh
-        h2 
-            padding: base-s-lh 0 0
-        time 
-            color: base-lt-c
-            font-family: base-hd-fm
-            font-weight: normal
-        &:hover 
-            time 
-                color: base-mt-c
-
-
-/*  PAGE FOOTER (#page-footer)
-    ----------------------------------------    */
-#page-footer 
-    .rights
-        a 
-            &:link
-            &:visited 
-                border-bottom-color: base-mt-c
-                color: base-mt-c
-            &:active
-            &:hover
-                border-bottom-color: base-a-ac-c
-                color: base-a-ac-c
-        p 
-            color: base-mt-c
+        text-shadow: 0.1rem 0.1rem 0 c-bd
+        text-transform: uppercase 
 
 
 /*  SITE NAVIGATION (#site-navigation)
     ----------------------------------------    */
 #site-navigation 
     ul 
-        list-style: none
+        list-style: none 
         margin: 0
-        text-align: center
+        text-align: center 
         li 
-            display: inline-block
-            margin: 0 (base-s-hs/2)
+            display: inline-block 
+            margin: 0 (hs * 1/2)
             a 
                 border-bottom-width: 0

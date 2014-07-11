@@ -1,25 +1,32 @@
 /*  BASIC GRID STYLES 
     ----------------------------------------    */
-.container
-    margin: 0 auto
-    max-width: 56rem
-    min-width: 32rem
-    &:before, &:after
-        content: " "
+.container 
+    margin: 0 auto 
+    max-width: 56rem 
+    min-width: 32rem 
+    /* clearfix */
+    &:before,
+    &:after 
+        content: ""
         display: table
-    &:after
-        clear: both
+    &:after 
+        clear: both 
 .column 
-    margin: 0 base-s-hs 
-
-.clearfix 
-    &:before, &:after
-        content: " "
-        display: table
-    &:after
-        clear: both
+    margin: 0 hs 
 .hidden 
     display: none
+
+
+/*  CLEARFIX 
+    ----------------------------------------    */
+.clearfix 
+    zoom: 1
+    &:before,
+    &:after 
+        content: ""
+        display: table 
+    &:after 
+        clear: both 
 
 
 /*  ACCESSIBILITY STYLES
@@ -32,67 +39,61 @@
     width: 1px
 
 
+/*  COMMON STYLES 
+    ----------------------------------------    */
+/* Set common margins for block level elements and page elements */
+figure,
+.picture, 
+#page-content .post .post-header 
+    margin-bottom: lh-s 
+#page-header,
+#page-footer,
+#site-navigation
+    padding: lh-s 0 
+
+/*  Set common top border for block level elements and page elements */
+#page-content .index-header,
+#page-content .tag-archive-header,
+#page-content article.post + article.post,
+#page-content .post .post-footer,
+#page-content .post .post-footer section + section,
+#page-footer .rights,
+#site-navigation
+    border-top: c-bd solid bd-w-n
+
+
 /*  FIGURES, IMAGES, AND PICTURES  
     ----------------------------------------    */
-figure 
+figure, 
 .picture 
-    margin: 0 0 base-s-lh 
+    width: 100%
+    /* reset all images to the same width */
+    &.l,
+    &.m
+        max-width:51.2rem
+    &.s
+        margin-left: auto
+        margin-right: auto
+        max-width: 34.4rem
     img 
-        &.l
-        &.m
-        &.s
-            width: 100% 
+        width: 100%      
 
 
 /*  PAGE CONTENT (#page-content)
     ----------------------------------------    */
 #page-content 
-    margin-bottom: base-s-lh 
+    padding-bottom: lh-s
     .pagination 
-        /*
-        border-bottom: base-bd-c solid base-s-bd-n-w
-        border-top: base-bd-c solid base-s-bd-n-w
-        */
-        margin-top: base-s-lh 
-        padding: base-s-lh 0
-        nav.pages 
-            padding: (base-s-lh * 4) 0 0
-    .post-footer 
-        border-top: base-bl-c solid base-s-bd-n-w 
-        section + section 
-            border-top: base-bd-c solid base-s-bd-n-w   
-    article + article 
-        border-top: base-bl-c solid base-s-bd-n-w
-
-
-/*  PAGE FOOTER (#page-footer)
-    ----------------------------------------    */
-#page-footer
-    padding-top: base-s-lh * 1.5
-    .rights 
-        border-top: base-bd-c solid base-s-bd-n-w
-        padding-top: base-s-lh
+        padding-top: lh-s
 
 
 /*  PAGE HEADER (#page-header)
     ----------------------------------------    */
-#page-header
-    padding-bottom: base-s-lh * 1.5 
-    padding-top: base-s-lh
-    img 
-        border: base-bg-c solid base-s-bd-t-w * 2
-        border-radius: 14rem
+#page-header 
+    img.logo
+        border: c-bg solid bd-w-n 
+        border-radius: 12rem 
         display: block
-        margin: 0 auto base-s-lh
-        max-height: 16rem
-        max-width: 16rem
-    img + h1 
-        padding-top: 0
-
-
-
-/*  SITE NAVIGATION (#site-navigation) 
-    ----------------------------------------    */
-#site-navigation 
-    border-top: base-bd-c solid base-s-bd-n-w
-    padding: base-s-lh 0
+        margin: 0 auto
+        max-height: 14rem
+        max-width: 14rem 

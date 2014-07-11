@@ -1,70 +1,72 @@
-@media all and (min-width: bp-large-min) 
+@media all and (min-width: bp-l-min)
     /*  BASIC GRID STYLES 
     ----------------------------------------    */
     .container 
-        max-width: 72rem
+        max-width: 80rem 
         min-width: 64rem
-    .column
-        margin: 0 (base-l-hs * 1.5)
+    .column 
+        margin: 0 (hs * 2)
 
 
-    /*  FIGURES, IMAGES, AND PICTURES 
-    ----------------------------------------    */
-    figure 
-    .picture
-        margin-bottom: base-l-lh
+    /*  COMMON STYLES 
+        ----------------------------------------    */
+    /* Set common margins for block level elements and page elements */
+    figure,
+    .picture, 
+    #page-content .post .post-header 
+        margin-bottom: lh-l 
+    #page-header,
+    #page-footer,
+    #page-footer .rights,
+    #site-navigation
+        padding: lh-l 0 
+
+    /*  FIGURES, IMAGES, AND PICTURES  
+        ----------------------------------------    */
+    figure,
+    .picture 
+        width: 100%
         &.l
-            width: 64.8rem
+            max-width: 70.4rem
         &.m 
             margin-left: auto
-            margin-right: auto
-            width: 51.2rem
+            margin-right: auto          
+            max-width: 51.2rem 
         &.s 
-            width: 34.4rem
+            max-width: 34.4rem 
             &.left 
-                float: left
-                margin-right: base-l-hs 
+                float: left 
+                margin-right: hs 
             &.right 
                 float: right
-                margin-left: base-l-hs
+                margin-left: hs 
         img 
-            &.l 
-            &.m 
+            &.l,
+            &.m,
             &.s 
                 width: 100%
-                
+
 
     /*  PAGE CONTENT (#page-content)
         ----------------------------------------    */
     #page-content 
-        margin-bottom: base-l-lh
-        .post-footer 
-            .post-metadata 
-            .post-tags 
-                float: left
-                width: 50%
-            section + section 
-                border-top-width: 0
-
-
-    /*  PAGE FOOTER (#page-footer)
-        ----------------------------------------    */
-    #page-footer
-        padding-top: base-l-lh * 2  
-        .rights 
-            padding-top: base-l-lh
+        padding-bottom: lh-l
+        .pagination 
+            padding-top: lh-l
+        .post 
+            .post-footer 
+                section + section 
+                    border-top-width: 0
+                .post-metadata,
+                .post-tags 
+                    float: left 
+                    width: 50%
 
 
     /*  PAGE HEADER (#page-header)
-    ----------------------------------------    */
-    #page-header 
-        padding-bottom: base-l-lh * 2
-        padding-top: base-l-lh
-        img 
-            margin-bottom: base-l-lh
-
-
-    /*  SITE NAVIGATION (#site-navigation) 
         ----------------------------------------    */
-    #site-navigation 
-        padding: base-l-lh 0
+    #page-header 
+        img.logo 
+            border-radius: 16rem 
+            max-height: 18rem 
+            max-width: 18rem 

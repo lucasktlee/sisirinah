@@ -1,145 +1,89 @@
 /*  BORDER WIDTHS 
     ----------------------------------------    */
-base-s-bd-n-w = 0.1rem
-base-s-bd-t-w = 0.4rem 
+bd-w-n = 0.1rem
 
 
-/*  COLORS
+/*	COLORS 
     ----------------------------------------    */
-base-bd-c = rgb(221,221,221)
-base-bg-c = rgb(255,255,255)
-base-bl-c = rgb(240,240,240)
-base-hd-c = rgb(34,34,34)
-base-lt-c = rgb(153,153,153)
-base-mt-c = rgb(102,102,102)
-base-tr-c = rgb(249,249,249)
-base-tx-c = rgb(68,68,68)
-/* link colors */
-base-a-ln-c = rgb(152,30,50)
-base-a-ac-c = rgb(216,43,71)
-/* accent colors */
-base-at-c = rgb(0,72,195)
+c-at = rgb(0,72,195)							/* accent color - #0048c3 */ 					
+c-bd = rgb(221,221,221)							/* border color - #dddddd */
+c-bg = rgb(255,255,255)							/* background color - #ffffff */				
+c-hd = rgb(34,34,34)							/* heading color - #222222 */					
+c-lt = rgb(153,153,153)							/* extra light body copy color - #999999 */		
+c-mt = rgb(102,102,102)							/* light body copy color - #666666 */			
+c-tr = rgb(249,249,249)							/* table row striping color - #f9f9f9 */		
+c-tx = rgb(68,68,68)							/* body copy color - #444444 */
+c-a-ln = rgb(152,30,50)							/* link color - #981e32 */						
+c-a-hv = rgb(216,43,71)  						/* hover color - #d82b47 */ 
 
 
 /*  FONT FAMILIES
     ----------------------------------------    */
-base-tx-fm = "Mercury SSm A", "Mercury SSm B", Georgia, serif
-base-hd-fm = "Gotham A", "Gotham B", Helvetica, sans-serif
-base-ms-fm = Consolas, monospace
+fm-tx = "Mercury SSm A", "Mercury SSm B", Georgia, serif
+fm-hd = "Gotham A", "Gotham B", Helvetica, sans-serif
+fm-ms = Consolas, "Lucida Console", Monaco, monospace
 
 
-/*  FONT SIZES 
+/*	FONT SIZES 
     ----------------------------------------    */
-/* font sizes for small devices */
-base-s-tx-fs = 1.4rem
-base-s-sm-fs = 1.2rem
-base-s-tn-fs = 1.0rem
+/* 	Body copy for small devices  */
+fs-s-tx = 1.4rem 
+fs-s-sm = 1.2rem 
+fs-s-tn = 1.0rem 
 
-base-s-h1-fs = 3.6rem
-base-s-h2-fs = 2.4rem
-base-s-h3-fs = 1.8rem
-base-s-h4-fs = 1.6rem
-base-s-h5-fs = base-s-tx-fs 
-base-s-h6-fs = base-s-tx-fs 
+fs-s-l = 3.6rem
+fs-s-h1 = 3.2rem 
+fs-s-h2 = 2.4rem 
+fs-s-h3 = 1.8rem 
+fs-s-h4 = 1.6rem 
 
-/* font sizes for medium devices */
-base-m-tx-fs = 1.6rem
-base-m-sm-fs = 1.4rem
-base-m-tn-fs = 1.2rem
+/*	Body copy for medium devices  */
+fs-m-tx = 1.6rem 
+fs-m-sm = 1.4rem 
+fs-m-tn = 1.2rem 
 
-base-m-h1-fs = 4.2rem
-base-m-h2-fs = 3.6rem
-base-m-h3-fs = 2.1rem
-base-m-h4-fs = 1.8rem
-base-m-h5-fs = base-m-tx-fs
-base-m-h6-fs = base-m-tx-fs
+fs-m-l = 4.2rem
+fs-m-h1 = 3.6rem
+fs-m-h2 = 2.8rem
+fs-m-h3 = 2.1rem
+fs-m-h4 = 1.8rem
 
-/* font sizes for large devices */
-base-l-tx-fs = 1.8rem
-base-l-sm-fs = 1.6rem
-base-l-tn-fs = 1.4rem
+/*	Body copy for large device  */
+fs-l-tx = 1.8rem 
+fs-l-sm = 1.6rem
+fs-l-tn = 1.4rem 
 
-base-l-h1-fs = 4.8rem
-base-l-h2-fs = 4.2rem
-base-l-h3-fs = 3.6rem
-base-l-h4-fs = 2.1rem
-base-l-h5-fs = base-m-tx-fs 
-base-l-h6-fs = base-m-tx-fs 
+fs-l-l = 4.8rem
+fs-l-h1 = 4.2rem
+fs-l-h2 = 3.2rem
+fs-l-h3 = 2.4rem
+fs-l-h4 = 2.1rem
 
 
 /*  LINE HEIGHTS AND HORIZONTAL SPACING
     ----------------------------------------    */
-base-s-hs = 2.4rem
-base-s-lh = 2.1rem
+hs = 2.4rem 
 
-base-m-hs = 2.4rem
-base-m-lh = 2.5rem
+lh-s = 2.1rem 
+lh-m = 2.5rem 
+lh-l = 2.8rem 
 
-base-l-hs = 2.4rem 
-base-l-lh = 2.8rem
+/* line-heights and line spacing for headings on small devices */
+lh-s-h1 = lh-s * 2.0000 							/* 21px * 2.0000 = 42px */
+lh-s-h2 = lh-s * 1.6667								/* 21px * 1.6667 = 35px */
 
-/* headings line-heights and margins/paddings for small devices */
-base-s-h1-lh = base-s-lh * 2
-base-s-h1-pd = base-s-lh
+/* line-heights and line spacing for headings on medium devices */ 
+lh-m-h1 = lh-m * 1.8000								/* 25px * 1.8000 = 45px */
+lh-m-h2 = lh-m * 1.4000								/* 25px * 1.4000 = 35px */
 
-base-s-h2-lh = base-s-lh * 1.5
-base-s-h2-pd = base-s-lh
-
-base-s-h3-lh = base-s-lh 
-base-s-h3-pd = base-s-lh
-
-base-s-h4-lh = base-s-lh
-base-s-h4-pd = base-s-lh
-
-base-s-h5-lh = base-s-lh 
-base-s-h5-pd = base-s-lh
-
-base-s-h6-lh = base-s-lh
-base-s-h6-pd = base-s-lh 
-
-/* headings line-heights and margins/paddings for medium devices */
-base-m-h1-lh = base-m-lh * 2
-base-m-h1-pd = base-m-lh
-
-base-m-h2-lh = base-m-lh * 1.2
-base-m-h2-pd = base-m-lh
-
-base-m-h3-lh = base-m-lh
-base-m-h3-pd = base-m-lh
-
-base-m-h4-lh = base-m-lh
-base-m-h4-pd = base-m-lh
-
-base-m-h5-lh = base-m-lh
-base-m-h5-pd = base-m-lh
-
-base-m-h6-lh = base-m-lh
-base-m-h6-pd = base-m-lh
-
-/* headings line-heights and margins/paddings for large devices */
-base-l-h1-lh = base-l-lh * 2 
-base-l-h1-pd = base-l-lh
-
-base-l-h2-lh = base-l-lh * 1.5
-base-l-h2-pd = base-l-lh
-
-base-l-h3-lh = base-l-lh * 1.5
-base-l-h3-pd = base-l-lh
-
-base-l-h4-lh = base-l-lh
-base-l-h4-pd = base-l-lh
-
-base-l-h5-lh = base-l-lh
-base-l-h5-pd = base-l-lh
-
-base-l-h6-lh = base-l-lh
-base-l-h6-pd = base-l-lh
+/* line-heights and line spacing for headings on large devices */
+lh-l-h1 = lh-l * 2.0000								/* 28px * 2.0000 = 56px */
+lh-l-h2 = lh-l * 1.5000								/* 28px * 1.5000 = 42px */
 
 
 /*  MEDIA QUERY BREAKPOINTS 
     ----------------------------------------    */
-/* Media queries are set in ems (1em = 16px) */
-bp-medium-max = 56.2500em  
-bp-medium-min = 37.5625em
+bp-m-max = 56.2500em 
+bp-m-min = 37.5625em
 
-bp-large-min = 56.3125em 
+bp-l-min = 56.3125em 

@@ -1,43 +1,51 @@
-@media all and (min-width: bp-medium-min) and (max-width: bp-medium-max)
+@media all and (min-width: bp-m-min) and (max-width: bp-m-max) 
     /*  BASIC GRID STYLES 
     ----------------------------------------    */
     .container 
-        max-width: 64rem
+        max-width: 64rem 
         min-width: 56rem
-    .column
-        margin: 0 (base-m-hs * 1.5)
-
-    /*  FIGURES, IMAGES, AND PICTURES 
-    ----------------------------------------    */
-    figure 
-    .picture
-        margin-bottom: base-m-lh
+    .column 
+        margin: 0 (hs * 1.5)
+        
+        
+    /*  COMMON STYLES 
+        ----------------------------------------    */
+    /* Set common margins for block level elements and page elements */
+    figure,
+    .picture, 
+    #page-content .post .post-header 
+        margin-bottom: lh-m 
+    #page-header,
+    #page-footer,
+    #page-footer .rights,
+    #site-navigation
+        padding: lh-m 0 
+        
+        
+    /*  FIGURES, IMAGES, AND PICTURES  
+        ----------------------------------------    */
+    figure,
+    .picture 
+        width: 100%
+        &.l,
+        &.m
+            max-width:51.2rem
+        img 
+            width: 100%
 
 
     /*  PAGE CONTENT (#page-content)
         ----------------------------------------    */
     #page-content 
-        margin-bottom: base-m-lh
-
-
-    /*  PAGE FOOTER (#page-footer)
-        ----------------------------------------    */
-    #page-footer
-        padding-top: base-m-lh * 2  
-        .rights 
-            padding-top: base-m-lh
+        padding-bottom: lh-m
+        .pagination 
+            padding-top: lh-m       
 
 
     /*  PAGE HEADER (#page-header)
-    ----------------------------------------    */
-    #page-header 
-        padding-bottom: base-m-lh * 2
-        padding-top: base-m-lh
-        img 
-            margin-bottom: base-m-lh
-
-
-    /*  SITE NAVIGATION (#site-navigation) 
         ----------------------------------------    */
-    #site-navigation 
-        padding: base-m-lh 0
+    #page-header 
+        img.logo 
+            border-radius: 14rem 
+            max-height: 16rem 
+            max-width: 16rem 
