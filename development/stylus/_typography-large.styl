@@ -23,7 +23,7 @@
     blockquote,
     pre 
         border-left: c-at solid (hs * 1/3)
-        padding: 0 hs
+        margin-left: -(hs)
 
     /* Set common styles for metadata-like headings */ 
     #page-content 
@@ -90,6 +90,19 @@
     sub,
     sup 
         font-size: fs-l-tn 
+
+
+    /*  LISTS 
+        ----------------------------------------    */
+    ol,
+    ul 
+        margin-left: 0
+        &>li>ol
+        &>li>ul
+            margin-left: hs
+            &>li>ol
+            &>li>ul
+                margin-left: hs
 
 
     /*  PARAGRAPHS
