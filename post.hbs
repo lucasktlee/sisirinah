@@ -33,6 +33,21 @@
 			<p>As a matter of <a href="http://lucasktlee.com/commenting-policy/">policy</a>, I have disabled comments on this blog.</p> 
 			<p>If you would like to comment, please feel free to use <a href="https://twitter.com/share?text={{encode title}}%20by%20@LucasKTLee&url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">Twitter</a> or (<em>better yet</em>) write a response on your own blog.</p>
 		</section>
+		<section class="post-nav">
+			{{#prev_post}}
+				<div class="post-nav-prev">
+					<p class="metadata">Previously on&#8230;</p>
+					<h2><a href="{{url}}">{{title}}</a></h2>	
+				</div>
+			{{/prev_post}}
+			{{#next_post}}
+				<div class="post-nav-next">
+					<p class="metadata">Coming up next&#8230;</p>
+					<h2><a href="{{url}}">{{title}}</a></h2>
+				</div>
+				<div class="clearfix"></div>
+			{{/next_post}}
+		</section>				
 	</footer>
 	{{/post}}
 </article>

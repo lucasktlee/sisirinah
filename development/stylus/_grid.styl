@@ -57,6 +57,7 @@ figure,
 #page-content article.post + article.post,
 #page-content .post .post-footer,
 #page-content .post .post-footer section + section,
+#page-content .post .post-footer .post-nav,
 #page-footer .rights,
 #site-navigation
     border-top: c-bd solid bd-w-n
@@ -87,10 +88,22 @@ figure,
         padding-top: lh-s
     .post-footer 
         .post-metadata,
+        .post-nav,
         .post-sharing,
         .post-tags
             padding-bottom: lh-s
-
+        .post-nav
+            border-top: c-bd solid bd-w-n
+            border-bottom: c-bd solid bd-w-n
+            clear: both
+            margin: lh-s * 4 0
+            padding-top: lh-s
+            aside + aside 
+                border-top: c-bd solid bd-w-n
+            .post-nav-next,
+            .post-nav-prev
+                clear: both 
+                padding: lh-s 0
 
 /*  PAGE HEADER (#page-header)
     ----------------------------------------    */

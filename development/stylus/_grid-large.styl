@@ -38,7 +38,7 @@
                 float: left 
                 margin-right: hs 
             &.right 
-                float: right
+                float: left
                 margin-left: hs 
         img 
             &.l,
@@ -55,6 +55,7 @@
             padding-top: lh-l
         .post 
             .post-footer 
+                aside + aside,
                 section + section 
                     border-top-width: 0
                 .post-metadata,
@@ -62,6 +63,19 @@
                     float: left
                     padding-bottom: lh-l 
                     width: 50%
+                .post-nav 
+                    border-bottom: c-bd solid bd-w-n
+                    margin: lh-l * 4 0
+                    padding: lh-l 0
+                    .post-nav-next,
+                    .post-nav-prev 
+                        clear: none
+                        padding: 0
+                        width: 50%
+                    .post-nav-next
+                        float: left
+                    .post-nav-prev
+                        float: left
                 .post-sharing 
                     border-top: c-bd solid bd-w-n
                     clear: both
