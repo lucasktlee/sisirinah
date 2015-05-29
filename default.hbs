@@ -5,6 +5,8 @@
 		<meta content="IE=edge" http-equiv="X-UA-Compatible" />
 		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
+		<title>{{meta_title}}</title>
+
 		<meta content="Lucas K.T. Lee" name="author" />
 		<meta content="{{meta_title}}" name="title" />
 		<meta content="{{meta_description}}" name="description" />
@@ -12,35 +14,13 @@
 		
 		<link href="//cloud.typography.com/7428892/793304/css/fonts.css" rel="stylesheet" type="text/css" />
 		<link href="{{asset "css/screen.css"}}" media="screen, projection" rel="stylesheet" type="text/css" />
-
-		<link href="{{@blog.url}}/rss/" rel="alternate" type="application/rss+xml" />
 		
-		<script src="{{asset "js/site.js"}}" type="text/javascript"></script>
-		<script async src="//www.google-analytics.com/analytics.js" type="text/javascript"></script>
 		<script type="text/javascript">
-			$(document).ready(function() {
-				$('.logo').responsImg({
-					breakpoints: {
-						all: 320,
-					}
-				});
-				$('.l').responsImg({
-					breakpoints: {
-						small: 320,
-						medium: 600,
-						large: 901
-					}
-				});
-				$('.m').responsImg({
-					breakpoints: {
-						small: 320,
-						medium: 600
-					}
-				})
-			});
+			// Picture element HTML5 shiv
+			document.createElement("picture");
 		</script>
-
-		<title>{{meta_title}}</title>
+		<script async src="{{asset "js/picturefill.min.js"}}" type="text/javascript"></script>
+		<script async src="//www.google-analytics.com/analytics.js" type="text/javascript"></script>
 
 		{{ghost_head}}
 	</head>
@@ -50,7 +30,7 @@
 		<header id="page-header" role="banner">
 			<div class="container">
 				<div class="column">
-					<a href="{{@blog.url}}"><img alt="Lucas K.T. Lee" class="logo" data-responsimg-all="{{asset "images/profile.jpg"}}, {{asset "images/profile@2x.jpg"}}" src="{{asset "images/profile.jpg"}}" /></a>
+					<a href="{{@blog.url}}"><img alt="Lucas K.T. Lee" class="logo" srcset="{{asset "images/profile@2x.jpg"}} 2x" src="{{asset "images/profile.jpg"}}" /></a>
 					<h1>{{@blog.title}}</h1>
 				</div>
 			</div>			
@@ -76,10 +56,5 @@
 			</div>
 		</footer>
 		{{ghost_foot}}
-		<script type="text/javascript">
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-		  ga('create', 'UA-48315794-1', 'lucasktlee.com');
-		  ga('send', 'pageview');
-		</script>
 	</body>
 </html>
