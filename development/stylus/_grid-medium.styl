@@ -25,11 +25,15 @@
     /*  FIGURES, IMAGES, AND PICTURES  
         ----------------------------------------    */
     figure,
-    .picture 
+    picture 
         width: 100%
         &.l,
         &.m
-            max-width:51.2rem
+            max-width: 51.2rem
+        &.border
+            img + figcaption,
+            img + .caption
+                margin-bottom: lh-m
         img 
             width: 100%
 

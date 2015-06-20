@@ -24,7 +24,7 @@
     /*  FIGURES, IMAGES, AND PICTURES  
         ----------------------------------------    */
     figure,
-    .picture 
+    picture 
         width: 100%
         &.l
             margin-left: 0
@@ -42,6 +42,10 @@
             &.right 
                 float: left
                 margin-left: hs 
+        &.border
+            img + figcaption,
+            img + .caption
+                margin-bottom: lh-l        
         img 
             &.l,
             &.m,
