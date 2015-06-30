@@ -315,6 +315,10 @@ dl.in-line
         &:before 
             content: ", " 
             margin-left: -0.4rem
+    dd + dt 
+        &:before 
+            content: "\A\A"
+            white-space: pre
 
 /* Ordered lists */ 
 ol 
